@@ -18,4 +18,6 @@
 
 先读 [工作流程](docs/workflow/README.md)，再打开本次涉及模块的 README。执行任务时，从 [Skill入口](.agents/skills/README.md) 选择当前阶段；启动和测试命令在采用模板后从实际项目配置中登记。
 
+开发提交项目名、PRD、固定设计版本和输入/预期案例；产品提交目标、设计范围、案例和待决定问题，在独立 designend 中用 mock 完成设计。可直接复制[分角色使用示例](../README.md#日常怎么使用)。资料不全时，Agent 会先查已有来源，再逐项澄清关键缺口。
+
 [协作规则](AGENTS.md) · [采用模板](docs/workflow/adoption.md) · [评估Skills](workflow-evaluation/README.md)
