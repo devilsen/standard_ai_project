@@ -1,0 +1,16 @@
+{
+  "project_key": null,
+  "environments": {
+    "test": {"name": null, "url": null, "release_record_ref": null},
+    "staging": {"name": null, "url": null, "release_record_ref": null}
+  },
+  "im": {
+    "sender_binding_ref": null,
+    "owner_recipient_ref": null,
+    "default_chat_ref": null,
+    "test_acceptance_recipients": ["owner"],
+    "staging_delivery_recipients": ["owner", "default_chat"],
+    "reminder_after_minutes": null,
+    "scheduler_ref": null
+  }
+}

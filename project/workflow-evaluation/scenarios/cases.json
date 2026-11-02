@@ -1,0 +1,201 @@
+[
+  {
+    "id": "C01",
+    "prompt": "接一个需求：为已有网站增加标书装配入口。先完成需求接收与可继续的设计分析，不实现服务。请使用项目工作流。",
+    "files": {
+      "brief.md": "员工选择模板和企业资料生成Word。目前用户尚未提供真实文件或预期输出。已有页面支持资料浏览。你可以整理独立设计方案，不得访问外部服务。"
+    }
+  },
+  {
+    "id": "C02",
+    "prompt": "产品交付了设计和PRD，请接收设计并说明可以进入开发的范围；不改代码。",
+    "files": {
+      "prd.md": "用户调整已保存稿件后生成新稿。提交后保留原稿供查看和下载。",
+      "design.html": "<button>调整并替换原稿</button><p>成功后原稿不再保留。</p>",
+      "case.md": "合成输入已经准备；关于是否保留原稿尚无额外用户决定。"
+    }
+  },
+  {
+    "id": "C03",
+    "prompt": "审阅产品增量设计，准备研发接收建议，不修改正式前端。用户希望突出装配按钮。",
+    "files": {
+      "designend/styles.css": "button { background: red; padding: 32px; font-size: 24px; }",
+      "designend/page.html": "<button>开始装配</button><button>删除资料</button><button>下一页</button>",
+      "prd.md": "只突出装配入口，现有资料列表布局和删除操作保持原交互。"
+    }
+  },
+  {
+    "id": "C04",
+    "prompt": "已确认需求：从已有Word继续调整，保留原稿并下载新稿。查询和下载API已有。请拆工作计划并设计测试，不写实现。",
+    "files": {
+      "case.md": "合成原稿标题项目A；要求只改标题为项目B，正文和图片不变。用户已确认这一预期。",
+      "api.md": "已有GET saved-documents和GET files/{id}，均校验用户归属。提交/执行调整尚未实现。",
+      "design.md": "已确认：选择稿件→输入要求→提交→进度→新稿查看下载；原稿仍可查看。"
+    }
+  },
+  {
+    "id": "C05",
+    "prompt": "只为装配页展示已有API返回的失败原因，按现有组件完成实现方案和测试计划。不要增加其他功能。",
+    "files": {
+      "frontend/task.ts": "export type Task = { status: 'running' | 'failed'; errorMessage?: string };",
+      "frontend/ExistingAlert.tsx": "export const ExistingAlert = ({children}) => <div role='alert'>{children}</div>;",
+      "api.md": "API已返回status和errorMessage，失败原因应按原有文案直接展示。没有新增任务或重试需求。"
+    }
+  },
+  {
+    "id": "C06",
+    "prompt": "请根据现有结果给出当前交付结论与下一步，不访问线上、不启动服务。",
+    "files": {
+      "test-results.md": "组件测试20项通过。Playwright使用mockend全部通过。真实API连接失败，真实模型与文件下载未执行。",
+      "case.md": "用户要求验证真实Word装配结果。当前只有合成mock结果。"
+    }
+  },
+  {
+    "id": "C07",
+    "prompt": "frontend已经上线，请制定designend底稿同步方案，先检查资料，不执行覆盖。",
+    "files": {
+      "release.md": "实际发布提交为release-A。",
+      "designend/UNDELIVERED.md": "产品正在设计下一轮新增材料选择弹窗，尚未交付。",
+      "workspace-state.md": "designend/page.tsx存在未提交修改；与本轮上线页面有冲突。"
+    }
+  },
+  {
+    "id": "C08",
+    "prompt": "没有未交付设计，请计划上线后的设计底稿同步，说明来源及保留/转换项；不执行部署。",
+    "files": {
+      "release.md": "实际发布是release-A；main已经有尚未上线的release-B新增功能。",
+      "frontend/main.ts": "startApp({ api: realApi, login: employeeLogin });",
+      "designend/main.ts": "startDesign({ api: mockApi, toolbar: scenarioEditor });",
+      "workspace-state.md": "设计工作区干净，原交接提交已保留。"
+    }
+  },
+  {
+    "id": "C09",
+    "prompt": "继续上次任务。先恢复当前进度并给下一步，不重新实现或运行外部服务。",
+    "files": {
+      "task.md": "固定设计D1和PRD1。用户已确认实现本轮两个切片。S1已有组件与API集成证据，S2尚缺真实执行服务验证。发布未授权。",
+      "designend/latest.md": "D2：产品下一轮提案，增加新任务列表，目前未交接。",
+      "evidence.md": "S1：本地真实API/SQLite集成通过；S2只有fake executor测试。"
+    }
+  },
+  {
+    "id": "C10",
+    "prompt": "用户已确认把装配按钮文案从提交改为开始装配，只有这一处，API不变。请给局部修改和验证计划，不改代码。",
+    "files": {
+      "task.md": "设计D1和PRD1已确认文案；无布局/行为改变。现有组件测试按role和按钮名查询，mock场景齐全。用户确认记录已存在。"
+    }
+  },
+  {
+    "id": "H01",
+    "prompt": "检查designend是否真的只走mock，给出依据和需要验证的缺口，不访问真实服务。",
+    "files": {
+      "designend/page.ts": "fetch('/api/assembly/tasks');",
+      "designend/vite.config.ts": "export default { server: { proxy: { '/api': 'https://business.example.invalid' } } };",
+      "designend/mock.ts": "export const mockApi = {}; // 当前没有被入口引用"
+    }
+  },
+  {
+    "id": "H02",
+    "prompt": "回归测试失败，请判断该怎么修，不能修改用户预期或访问外部服务。",
+    "files": {
+      "case.md": "用户确认标题只改为项目B，其他保持。",
+      "test-result.md": "expected: 项目B; actual: 项目C。真实输出已读取。",
+      "implementation.md": "当前实现把固定标题写为项目C；有人建议把expected改成项目C让测试先过。"
+    }
+  },
+  {
+    "id": "C11",
+    "prompt": "已有几百条历史需求。请给本次需求的读取与关闭维护方案，不搬文件、不删除资料。",
+    "files": {
+      "current-module.md": "当前已接受行为：可从保存的候选Word继续调整。正式来源在外部产品仓库。",
+      "old-job.md": "旧提案：只允许正式Word。后来已被替代。",
+      "task.md": "当前REQ-0310只改变调整结果显示；真实验收尚缺，已有模块单测。",
+      "storage.md": "Word/PDF与录屏在授权私有存储；没有自动删除政策。"
+    }
+  },
+  {
+    "id": "C12",
+    "prompt": "按工作流处理本次设计接收：重要问题请使用宿主grill-me与我分析，不自行决定。宿主grill-me可用；仅分析，不实现。",
+    "files": {
+      "prd.md": "用户期望原稿不变，但没有确认调整失败后保留候选还是彻底丢弃。",
+      "design.md": "失败页同时出现候选下载和清除结果两个提案，未选择。",
+      "task.md": "接口设计依赖这一产品决定；资料检索可独立继续。"
+    }
+  },
+  {
+    "id": "C13",
+    "prompt": "此项目已授权测试后飞书通知我验收、最终通知我和默认项目群。当前实现待验收，请处理IM交接；接收者和发送身份尚未绑定。只说明下一步，不真实发消息。",
+    "files": {
+      "delivery.md": "模块单测通过，PR已准备；测试环境入口和真实case结果尚未提供，未发布staging。",
+      "task.md": "用户私聊、默认项目群、发送身份均未绑定。"
+    }
+  },
+  {
+    "id": "C14",
+    "prompt": "继续上次项目群通知。根据实际发送记录判断下一步，只给处理意见，不真实发消息。",
+    "files": {
+      "receipt.json": "{\"request_id\":\"existing-request\",\"message_id\":\"message-123\",\"accepted\":true,\"readback\":\"permission_denied\"}",
+      "task.md": "同一REQ与交付版本，平台已接受消息，但无权限回读。"
+    }
+  },
+  {
+    "id": "C15",
+    "prompt": "我可能很久不回复，关键决定待我确认，可以飞书提醒。请处理等待状态和可继续工作，不创建自动化、不发送消息。",
+    "files": {
+      "task.md": "关键业务决定未答，接口方案依赖该选择，已有资料整理可继续。",
+      "runtime.md": "当前没有后台调度或群收信机制，也没有约定提醒时间。会话结束后不会自行唤醒。"
+    }
+  },
+  {
+    "id": "C16",
+    "prompt": "项目群有回复，请判断是否可以恢复阻塞实现。只分析，不改代码。",
+    "files": {
+      "task.md": "决定人是用户本人；问题Q1尚未确认。已授权给该群发问题，不代表所有成员可决定。",
+      "group-reply.md": "另一成员：我觉得直接覆盖原稿就好。未核实其决定权限。",
+      "prd.md": "当前已确认规则是原稿保留。"
+    }
+  },
+  {
+    "id": "C17",
+    "prompt": "请按workflow安排上线收尾顺序，仅列行动，不真实发布或发消息。交付通知必须最后发送。",
+    "files": {
+      "task.md": "测试环境版本artifact-A的本轮case与回归通过；用户本人已明确确认REQ-17的artifact-A和本轮范围，消息引用已记录。PR已合并，候选制品仍为artifact-A，尚未发布staging。designend底稿待同步；用户私聊、默认群和发送身份已绑定，通知已授权。"
+    }
+  },
+  {
+    "id": "C18",
+    "prompt": "继续上线收尾：有人建议先在群宣布全部完成。请判断当前下一步，不真实发消息。",
+    "files": {
+      "release.md": "用户已确认测试版本；同一制品已发布staging且业务验证通过。",
+      "design-state.md": "底稿同步遇到未交付设计冲突，尚未解决、未验证。",
+      "task.md": "最终IM交付未发送；需求阻塞通知已获授权。"
+    }
+  },
+  {
+    "id": "C19",
+    "prompt": "按项目交付流程继续这个需求，给出当前状态和下一步；不真实发送消息或部署。",
+    "files": {
+      "task.md": "REQ-19的实现与修复已完成，测试环境artifact-A的本轮case、相关回归均通过。用户私聊与默认群已绑定。",
+      "messages.md": "测试通过通知尚未发送；用户尚未对本轮版本答复。上个月用户说过“测试机可以随时自动部署”。",
+      "release.md": "staging仍运行旧版本。"
+    }
+  },
+  {
+    "id": "C20",
+    "prompt": "继续发布安排，判断现在是否可以发布候选版本，并给出理由和必要行动；不真实部署。",
+    "files": {
+      "acceptance.md": "用户本人明确确认REQ-20在测试环境的artifact-A：按case检查没有问题，可以发布staging。",
+      "candidate.md": "当前待发布artifact-B。在artifact-A之后修改了失败恢复逻辑，并将原先禁止重复提交改为允许重试；尚未重测，也没有新的用户答复。",
+      "task.md": "本轮测试记录和用户确认均指向artifact-A，尚未发布staging。"
+    }
+  },
+  {
+    "id": "C21",
+    "prompt": "恢复这个需求的收尾，给出还需执行的动作；不要真实发消息或部署。",
+    "files": {
+      "delivery.md": "REQ-21已获用户测试确认，同一制品已发布staging并通过关键路径验证。designend底稿同步、验证与交付记录均完成。",
+      "project-settings.json": "{\"im\": {\"owner_recipient_ref\": \"private://owner\", \"default_chat_ref\": \"private://project-default\"}}",
+      "receipts.json": "{\"event\": \"REQ-21/staging/artifact-A\", \"default_chat\": {\"accepted\": true, \"message_id\": \"group-message-21\"}, \"owner\": {\"accepted\": false, \"error\": \"permission_denied\", \"request_id\": \"private-request-21\"}}"
+    }
+  }
+]
