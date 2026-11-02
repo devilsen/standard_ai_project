@@ -1,0 +1,12 @@
+{
+  "purpose": "模板版本指纹，非行为评估结果",
+  "skills": {
+    "project/.agents/skills/define-api/SKILL.md": "494a403e5b42b6c390cfec26e5e88c9cc5750dff2022ff6dc1f1740a3fdb34df",
+    "project/.agents/skills/evaluate-workflow/SKILL.md": "59f9fead8cc36a1695c609aa168731850801fdeebe1621f4b255c4bebef6053e",
+    "project/.agents/skills/plan-and-implement/SKILL.md": "41e9f3203ab7d915248c7064aa93b0435268520d9507f54a1c6f2d65b1e40870",
+    "project/.agents/skills/prepare-design/SKILL.md": "1ca35d6d1c4f37ea8c5020923611ca2fdad792df9aa8a797db32e92f40a5f6c6",
+    "project/.agents/skills/project-workflow/SKILL.md": "d821ec8dbe0a0a68d366939e31af65fa9464d81ccb654d3cdad360e67776f883",
+    "project/.agents/skills/refresh-design/SKILL.md": "27548c09901d0e9b89e0b85e40d92d739a345dba3bef29c354415d65921697e2",
+    "project/.agents/skills/verify-delivery/SKILL.md": "8c55c3508dcf21b12859d80a428a460f214ec038d95aa8a38994119a40fe400a"
+  }
+}

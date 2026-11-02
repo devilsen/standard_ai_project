@@ -1,0 +1,16 @@
+{
+  "scenario_id": "SYNTHETIC-TOOL-EXAMPLE",
+  "run_id": "not-an-agent-run",
+  "skill_revision": "synthetic-example-only",
+  "conditions": "仅演示评分工具；这些分数不是Skill实测结果",
+  "ratings": {
+    "requirements": {"applicable": true, "score": 4, "evidence": ["合成算分样例，非真实证据"]},
+    "scope": {"applicable": true, "score": 3, "evidence": ["合成算分样例，非真实证据"]},
+    "consistency": {"applicable": true, "score": 4, "evidence": ["合成算分样例，非真实证据"]},
+    "decisions": {"applicable": true, "score": 3, "evidence": ["合成算分样例，非真实证据"]},
+    "implementation": {"applicable": true, "score": 3, "evidence": ["合成算分样例，非真实证据"]},
+    "evidence": {"applicable": true, "score": 4, "evidence": ["合成算分样例，非真实证据"]}
+  },
+  "fatal_issues": [],
+  "reviewer": "示例占位，正式评分需填写实际评审者与证据"
+}
