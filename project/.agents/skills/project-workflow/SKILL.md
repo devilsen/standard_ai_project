@@ -15,6 +15,7 @@ description: 在采用独立设计交接流程的项目中启动或继续需求�
 
 | 当前需要 | 读取并执行 |
 |---|---|
+| 用户给出Markdown/飞书Bug清单，要求逐项修复 | [buglist-fix](../buglist-fix/SKILL.md) |
 | 目标/case/交互不明确，或接收产品设计 | [prepare-design](../prepare-design/SKILL.md) |
 | 界面行为明确，需要接口和内部边界 | [define-api](../define-api/SKILL.md) |
 | 契约足够，准备拆解/实现 | [plan-and-implement](../plan-and-implement/SKILL.md) |

@@ -16,3 +16,5 @@
 | [evaluate-workflow](evaluate-workflow/SKILL.md) | 测试、评分并改进这套Skills |
 
 宿主支持项目Skills时使用 `$project-workflow`；否则显式读取对应文件。采用方式见[接入说明](../../docs/workflow/adoption.md)，效果验证见[评估入口](../../workflow-evaluation/README.md)。
+
+清单批量修复使用 [buglist-fix](buglist-fix/SKILL.md)：逐项诊断、两轮上限、单Bug单PR、结构化归因与长期漏斗。

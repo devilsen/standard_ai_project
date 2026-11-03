@@ -15,3 +15,5 @@
 新需求从目标、案例和设计开始；已有任务从当前阶段继续。测试环境开发修复并验证通过后，飞书私聊用户验收；用户确认该版本才发布staging。发布验证、底稿同步与记录完成后，最后分别通知用户和默认群。
 
 执行入口是 [project-workflow Skill](../../.agents/skills/project-workflow/SKILL.md)。
+
+Bug清单修复见 [buglist-fix](../../.agents/skills/buglist-fix/SKILL.md)；[漏斗约定](../../.agents/skills/buglist-fix/references/funnel.md)说明归因和统计口径，[绑定示例](bug-funnel.example.json)采用时填写，不含真实飞书目标。

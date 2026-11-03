@@ -30,3 +30,15 @@ python3 project/workflow-evaluation/score.py project/workflow-evaluation/scoreca
 ```
 
 算分示例为合成数据，不能当作Skill成绩。独立行为评测步骤见project/workflow-evaluation/README.md；Skill格式校验使用宿主skill-creator实际安装位置。
+
+## Bug清单修复Skill接入
+
+新增第11个Skill：project/.agents/skills/buglist-fix，包含逐项领取、两轮累计预算、独立PR与原记录回写、回归测试晋升、双重归因和本地漏斗导出。工作流入口和项目AGENTS已接入；飞书绑定改为未配置示例，不携带原项目身份、表格或环境配置。
+
+本次实际验证：漏斗工具8项测试、评估工具10项测试、Skill格式、138条Markdown相对链接、全部JSON解析和diff检查通过。新增B01—B10后共33个评估场景；没有独立Agent行为实测、真实Bug修复、飞书读写或部署。
+
+采用项目后可运行漏斗工具检查：
+
+```bash
+python3 -m unittest discover -s project/.agents/skills/buglist-fix/scripts -p 'test_*.py'
+```
