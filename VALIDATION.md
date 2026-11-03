@@ -42,3 +42,5 @@ python3 project/workflow-evaluation/score.py project/workflow-evaluation/scoreca
 ```bash
 python3 -m unittest discover -s project/.agents/skills/buglist-fix/scripts -p 'test_*.py'
 ```
+
+飞书接入续补：补充按稳定字段ID和项目+Bug ID同步、回读、范围对账与统计快照规则。实际项目的连接已在原项目核验，本模板继续保留未配置示例，不复制其账号、Base或记录ID；没有在本模板环境测试真实Bug数据同步。
