@@ -61,9 +61,13 @@ def validate(record):
         number = attempt.get('round')
         require(type(number) is int and number > 0 and number not in rounds, 'invalid/duplicate round')
         rounds.add(number)
-        require(attempt.get('status') in ('running', 'failed', 'passed'), 'invalid attempt status')
+        require(attempt.get('status') in ('running', 'failed', 'passed', 'unknown'), 'invalid attempt status')
         require(bool(attempt.get('hypothesis')) and bool(attempt.get('revision_ref')), 'attempt context required')
-        timestamp(attempt['started_at'])
+        if attempt.get('started_at') is None:
+            require(bool(attempt.get('historical_evidence')), 'unknown start requires historical evidence')
+            timestamp(attempt['observed_at'])
+        else:
+            timestamp(attempt['started_at'])
     events = record.get('events')
     require(isinstance(events, list) and bool(events), 'events required')
     ids = set()
@@ -135,7 +139,8 @@ def snapshot(record, as_of):
             blocker, next_action = '', ''
             milestones = {}
             reopens += 1
-    attempts = [a for a in record['attempts'] if timestamp(a['started_at']) <= as_of]
+    attempts = [a for a in record['attempts']
+                if timestamp(a.get('started_at') or a['observed_at']) <= as_of]
     def passed(name):
         return milestones.get(name, {}).get('result') == 'passed'
     return {'stage': stage, 'entered': entered, 'blocker': blocker, 'next_action': next_action,

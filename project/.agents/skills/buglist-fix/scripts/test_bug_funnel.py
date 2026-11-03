@@ -22,6 +22,20 @@ def milestone(r, name, at='2026-11-02T16:30:00Z'):
 
 
 class FunnelTests(unittest.TestCase):
+    def test_imported_attempts_preserve_budget_without_invented_start_or_success(self):
+        r = bug()
+        r['attempts'] = [{'round': i, 'status': 'unknown', 'started_at': None,
+                          'observed_at': '2026-11-03T03:00:00Z', 'historical_evidence': ['old-pr'],
+                          'hypothesis': 'historical repair', 'revision_ref': str(i)} for i in (1, 2)]
+        result, metrics = self.summarize([r])
+        self.assertEqual(result['details'][0]['attempts'], 2)
+        self.assertEqual(metrics['attempt_budget_exhausted_unverified']['count'], 1)
+        self.assertEqual(metrics['targeted_verified_current']['count'], 0)
+        past = report([(Path('bug.json'), validate(r))], timestamp('2026-11-03T02:00:00Z'), 'Asia/Shanghai')
+        self.assertEqual(past['details'][0]['attempts'], 0)
+        r['attempts'][0]['historical_evidence'] = []
+        with self.assertRaises(ValueError): validate(r)
+
     def summarize(self, records):
         result = report([(Path(str(i)), validate(r)) for i, r in enumerate(records)],
                         timestamp('2026-11-03T04:00:00Z'), 'Asia/Shanghai')
