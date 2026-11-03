@@ -68,4 +68,8 @@ PRD：链接
 
 产品可以先交付 designend、PRD 和案例；开发会检查它们是否足够实现。测试环境通过后，开发会发起版本验收，收到明确确认前不会发布 staging。
 
-本包提供文档、10个Skills和评估工具；尚未包含可运行的业务应用，也未修改现有项目。实际完成的检查见[验证记录](VALIDATION.md)。
+本包提供文档、11个Skills和评估工具；尚未包含可运行的业务应用，也未修改现有项目。实际完成的检查见[验证记录](VALIDATION.md)。
+
+### Bug清单修复
+
+将Markdown或飞书Bug清单交给 [buglist-fix](project/.agents/skills/buglist-fix/SKILL.md)，逐项诊断和修复；每Bug最多两轮、独立PR，整批验证并经用户确认后发布staging。保留本地调查、结构化归因和漏斗统计；采用时配置自己的飞书身份与表格。

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "SYNTHETIC-BUG-001",
+  "title": "合成示例：导出图片缺失，非真实Bug",
+  "project": "example-project",
+  "created_at": "2026-11-03T09:00:00+08:00",
+  "source": {
+    "ref": "https://example.invalid/buglist",
+    "record_id": "synthetic-record-001"
+  },
+  "reproduction": {
+    "level": null
+  },
+  "attribution": {
+    "technical": [],
+    "process": []
+  },
+  "attempts": [],
+  "links": {
+    "pr": null,
+    "regression": [],
+    "cases": []
+  },
+  "events": [
+    {
+      "id": "synthetic-received-001",
+      "type": "stage_entered",
+      "stage": "received",
+      "at": "2026-11-03T09:00:00+08:00"
+    }
+  ]
+}
