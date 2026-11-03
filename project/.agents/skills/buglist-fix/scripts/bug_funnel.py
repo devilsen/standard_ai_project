@@ -194,7 +194,7 @@ def report(records, as_of, tz_name):
                 count += 1
         add('today_'+milestone+'_still_valid', count)
     add('blocked_current', sum(bool(s['blocker']) for s in states))
-    add('attempt_budget_exhausted_unverified', sum(len(s['attempts']) >= 2 and not s['passed']('targeted_verified') for s in states))
+    add('attempt_budget_exhausted_unverified', sum(len(s['attempts']) >= 5 and not s['passed']('targeted_verified') for s in states))
     add('reopened_bugs', sum(s['reopens'] > 0 for s in states), total)
     for stage in STAGES:
         add('stage:'+stage, sum(s['stage'] == stage for s in states))

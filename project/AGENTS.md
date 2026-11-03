@@ -12,7 +12,7 @@
 ## 工作入口
 
 - 新需求、继续任务或阶段交接，按 `.agents/skills/project-workflow/SKILL.md` 选择当前阶段。
-- 用户指定Bug清单逐项修复时，执行 `.agents/skills/buglist-fix/SKILL.md`：每Bug最多两轮累计修改、单Bug单PR并回写原记录；整批测试后由用户确认候选再发布staging。
+- 用户指定Bug清单逐项修复时，执行 `.agents/skills/buglist-fix/SKILL.md`：每Bug最多五轮累计修改（第3、4、5轮在已授权范围内不另等审批）、单Bug单PR并回写原记录；整批测试后由用户确认候选再发布staging。
 - 每次任务复用或建立一份 `docs/workflow/templates/task.md` 所定义的任务记录；已有等价记录就引用，不另建副本。
 - 只读取当前任务和修改目录适用的规则；不将整个技能库载入上下文。
 - 已确认的范围与授权持续有效，不在每个步骤重复问是否继续。只有实质产品歧义、关键设计变化或授权不足时暂停相应动作；其他工作继续。
