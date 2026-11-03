@@ -4,6 +4,7 @@
 
 | Skill | 用途 |
 |---|---|
+| [buglist-fix](buglist-fix/SKILL.md) | 逐项修复清单、自主验证真实业务、独立PR与飞书结果回写 |
 | [project-workflow](project-workflow/SKILL.md) | 启动、恢复任务并选择阶段 |
 | [prepare-design](prepare-design/SKILL.md) | 理解需求、演示设计、接收交接 |
 | [define-api](define-api/SKILL.md) | 明确接口和后端边界 |
@@ -17,4 +18,4 @@
 
 宿主支持项目Skills时使用 `$project-workflow`；否则显式读取对应文件。采用方式见[接入说明](../../docs/workflow/adoption.md)，效果验证见[评估入口](../../workflow-evaluation/README.md)。
 
-清单批量修复使用 [buglist-fix](buglist-fix/SKILL.md)：逐项诊断、两轮上限、单Bug单PR、结构化归因与长期漏斗。
+清单修复的输入、执行步骤、验收与结果查看方式见[使用流程](../../../README.md#bug清单修复)；执行细节由 buglist-fix 及其 references 维护。
