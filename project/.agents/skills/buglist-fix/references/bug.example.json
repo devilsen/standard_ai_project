@@ -2,7 +2,7 @@
   "schema_version": 1,
   "id": "SYNTHETIC-BUG-001",
   "title": "合成示例：导出图片缺失，非真实Bug",
-  "project": "example-project",
+  "project": "commercial-bidding-tools",
   "created_at": "2026-11-03T09:00:00+08:00",
   "source": {
     "ref": "https://example.invalid/buglist",

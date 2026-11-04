@@ -29,7 +29,7 @@ class FunnelTests(unittest.TestCase):
                           'hypothesis': 'historical repair', 'revision_ref': str(i)} for i in (1, 2)]
         result, metrics = self.summarize([r])
         self.assertEqual(result['details'][0]['attempts'], 2)
-        self.assertEqual(metrics['attempt_budget_exhausted_unverified']['count'], 1)
+        self.assertEqual(metrics['attempt_budget_exhausted_unverified']['count'], 0)
         self.assertEqual(metrics['targeted_verified_current']['count'], 0)
         past = report([(Path('bug.json'), validate(r))], timestamp('2026-11-03T02:00:00Z'), 'Asia/Shanghai')
         self.assertEqual(past['details'][0]['attempts'], 0)
@@ -62,8 +62,26 @@ class FunnelTests(unittest.TestCase):
                             {'id': 'stage2', 'type': 'stage_entered', 'stage': 'diagnosing', 'at': '2026-11-02T17:00:00Z'}])
         result, metrics = self.summarize([r])
         self.assertEqual(metrics['targeted_verified_current']['count'], 0)
-        self.assertEqual(metrics['attempt_budget_exhausted_unverified']['count'], 1)
+        self.assertEqual(metrics['attempt_budget_exhausted_unverified']['count'], 0)
         self.assertEqual(result['details'][0]['attempts'], 2)
+
+    def test_five_round_budget_preserves_history_and_excludes_verified_bugs(self):
+        r = bug()
+        for round_number in range(1, 6):
+            r['attempts'].append({'round': round_number, 'status': 'failed',
+                                  'started_at': '2026-11-02T16:00:00Z',
+                                  'hypothesis': 'cause', 'revision_ref': str(round_number)})
+            _, metrics = self.summarize([r])
+            self.assertEqual(metrics['attempt_budget_exhausted_unverified']['count'],
+                             int(round_number == 5))
+        milestone(r, 'targeted_verified')
+        _, metrics = self.summarize([r])
+        self.assertEqual(metrics['attempt_budget_exhausted_unverified']['count'], 0)
+        r['events'].append({'id': 'reopen-five', 'type': 'reopened',
+                            'at': '2026-11-02T17:00:00Z', 'reason': 'same failure'})
+        result, metrics = self.summarize([r])
+        self.assertEqual(result['details'][0]['attempts'], 5)
+        self.assertEqual(metrics['attempt_budget_exhausted_unverified']['count'], 1)
 
     def test_reopen_alone_returns_delivered_bug_to_diagnosis(self):
         r = bug()

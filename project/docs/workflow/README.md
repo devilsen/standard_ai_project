@@ -16,4 +16,4 @@
 
 执行入口是 [project-workflow Skill](../../.agents/skills/project-workflow/SKILL.md)。
 
-Bug清单修复见 [buglist-fix](../../.agents/skills/buglist-fix/SKILL.md)；[漏斗约定](../../.agents/skills/buglist-fix/references/funnel.md)说明归因和统计口径，[绑定示例](bug-funnel.example.json)采用时填写，不含真实飞书目标。
+Bug清单修复先看[使用流程](../../../README.md#bug清单修复)，执行细节见 [buglist-fix](../../.agents/skills/buglist-fix/SKILL.md)；[漏斗约定](../../.agents/skills/buglist-fix/references/funnel.md)说明归因和统计口径，[绑定示例](bug-funnel.example.json)采用时填写，不含真实飞书目标。
