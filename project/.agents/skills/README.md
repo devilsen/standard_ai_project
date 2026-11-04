@@ -9,6 +9,7 @@
 | [prepare-design](prepare-design/SKILL.md) | 理解需求、演示设计、接收交接 |
 | [define-api](define-api/SKILL.md) | 明确接口和后端边界 |
 | [plan-and-implement](plan-and-implement/SKILL.md) | 拆片、设计测试、实现 |
+| [verify-ui](verify-ui/SKILL.md) | 第5步内对照固定设计、成对截图、差异修复与复验 |
 | [verify-delivery](verify-delivery/SKILL.md) | 测试环境验证修复，私聊用户验收并等待确认 |
 | [release-staging](release-staging/SKILL.md) | 发布已确认版本到staging并验证 |
 | [refresh-design](refresh-design/SKILL.md) | 上线后更新设计底稿 |

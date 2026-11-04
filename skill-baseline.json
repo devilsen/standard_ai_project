@@ -6,11 +6,12 @@
     "project/.agents/skills/define-api/SKILL.md": "590a25df49099cdf02f3bcb53c57e34d7a413e9889f2d5575b5460fce3d56e56",
     "project/.agents/skills/evaluate-workflow/SKILL.md": "c4491e34a03cbc52a03f1592dce52037e272089dde0570479e91d5befdf48876",
     "project/.agents/skills/notify-project/SKILL.md": "9bae8506653745b60a65579c2f7dd44931bb7ea95dc4b0e9072aed96c46cf19d",
-    "project/.agents/skills/plan-and-implement/SKILL.md": "0fa5e7b0659b929add6db60c7fc0e078171d1e6066a7749ce5718ce078881959",
-    "project/.agents/skills/prepare-design/SKILL.md": "8af1beddbb06ddb7e1eef261e1f5187c6669ea95e31724f36bd27859499a6e20",
-    "project/.agents/skills/project-workflow/SKILL.md": "8c69574bcf4e7ff16c6cfa2479976fc7f60d5039f2b0455656ae82b43bc624a4",
+    "project/.agents/skills/plan-and-implement/SKILL.md": "9b7bb58604001cdac82d9030ab82d825064feaff71f5c07babf0748b9aa1e7ea",
+    "project/.agents/skills/prepare-design/SKILL.md": "a13991d75c9a0ae6d6ab7a0ea27e3c2c5be9cffb6f13211b8da07f0a0212799e",
+    "project/.agents/skills/project-workflow/SKILL.md": "6d63c947805ca221931031fbf02bb9827404e0c108740c914c059897021fae82",
     "project/.agents/skills/refresh-design/SKILL.md": "b8246df2395a9591cb893e1e0f794c97d82539ddd6313d13d69fe3dfaccef045",
     "project/.agents/skills/release-staging/SKILL.md": "112ac107cb729daf2e66ad71a0ba3cda978e4e2273198c000d4fe08602cc5c66",
-    "project/.agents/skills/verify-delivery/SKILL.md": "b670159d01593b51a2de15ca82149c202991c0099025b6c88488139191d51cbd"
+    "project/.agents/skills/verify-delivery/SKILL.md": "0d18b9b964ea8953f0867e0b9ca805ea45e247a2825e678b4dcd6b3e2954cf16",
+    "project/.agents/skills/verify-ui/SKILL.md": "eaf4f9e07d97d0a94c8724667107aa39acb06b0c79253f0871dbd1e63c266aa8"
   }
 }

@@ -5,6 +5,7 @@
 ## 关键入口
 
 - [完整流程](workflow.md)：阶段、输入输出和完成条件。
+- [UI对齐检查](../../.agents/skills/verify-ui/SKILL.md)：第5步内对照设计与实现，修复后再请用户验收。
 - [装配示例](example.md)：一个需求怎样拆解。
 - [模板目录](templates/README.md)：任务、PRD、测试与交付记录。
 - [澄清与通知](notifications.md)、[项目配置示例](project-settings.example.json)、[文件维护](file-lifecycle.md)。
