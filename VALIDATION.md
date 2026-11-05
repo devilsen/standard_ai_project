@@ -66,3 +66,5 @@ python3 -m unittest discover -s project/.agents/skills/buglist-fix/scripts -p 't
 仅单一候选、两题各一次，没有旧版同题对照，不代表稳定性提升或整套流程全部通过；真实UI、部署和飞书送达未在模板评估中验证。业务系统的用户文件测试在原项目task/PR中独立记录。
 
 私有评估产物：`/tmp/check-score-workflow-evaluation-20261105/observations.md`（SHA256 4b3e59f75b1ace59d916a306b9be4b5d0c009c767dda73fd82e4485357ed7773）、`command-log.jsonl`（SHA256 1b91c9d350b3f7427cfe64ef3739623e7acf07e796c6eab27dbfb6e5ce175f1e）。不复制业务原件、凭据或真实通知目标到模板。
+
+父执行者随后依据rubrics对上述两题分别填写scorecard并实际运行score.py，均为100分、无缺失维度或致命问题，仅代表两个合成题的局部判断；没有旧版对照或重复样本，不能外推为稳定性、真实UI、外部服务或通知验收。评分表与算分结果保留在同一私有评估目录。
