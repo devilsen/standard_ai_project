@@ -12,6 +12,7 @@
 ## 工作入口
 
 - 新需求、继续任务或阶段交接，按 `.agents/skills/project-workflow/SKILL.md` 选择当前阶段。
+- 自主case测试按`.agents/skills/verify-delivery/SKILL.md`：Agent主动收集输入并按PRD制定独立预期，在测试环境连续测试、修复及复验，最终交用户复核。默认累计10轮或2小时，先到为准，本轮用户明确预算优先；到限仍未通过时具体回报并通过已核验飞书本人通道通知。不因换分支/会话重置预算，不以测试通过替代用户确认或staging授权。
 - 用户指定Bug清单逐项修复时，执行 `.agents/skills/buglist-fix/SKILL.md`：每Bug最多五轮累计修改（第3、4、5轮在已授权范围内不另等审批）、单Bug单PR并回写原记录；整批测试后由用户确认候选再发布staging。
 - 每次任务复用或建立一份 `docs/workflow/templates/task.md` 所定义的任务记录；已有等价记录就引用，不另建副本。
 - 只读取当前任务和修改目录适用的规则；不将整个技能库载入上下文。
