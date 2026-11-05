@@ -11,7 +11,8 @@ flowchart TD
     C --> D[研发：确定 API 契约、行为切片与测试]
     D --> E[按切片测试驱动实现前后端]
     E --> F[测试环境验证真实案例与相关回归]
-    F --> G{本轮测试通过？}
+    F --> U[涉及界面：verify-ui 同场景对照、差异修复与复验]
+    U --> G{功能与UI适用项均通过？}
     G -->|否：修复并复测| E
     G -->|是| H[飞书私聊：测试入口、版本与验收说明]
     H --> I{用户确认该版本？}
@@ -30,6 +31,8 @@ flowchart TD
 - [工作流程](project/docs/workflow/README.md)：了解每个阶段和交接方式。
 - [Skills导航](project/.agents/skills/README.md)：查看Agent怎样执行任务。
 - [测试与评分](project/workflow-evaluation/README.md)：用实际任务改进Skills。
+
+UI变更在第5步执行 [verify-ui](project/.agents/skills/verify-ui/SKILL.md)：固定已确认设计与测试版本，保留同场景成对截图，逐项修复并复验；功能验证、UI对齐与产品验收分别报告。没有可见影响时说明不适用。
 
 ## 怎么采用
 
@@ -68,7 +71,7 @@ PRD：链接
 
 产品可以先交付 designend、PRD 和案例；开发会检查它们是否足够实现。测试环境通过后，开发会发起版本验收，收到明确确认前不会发布 staging。
 
-本包提供文档、11个Skills和评估工具；尚未包含可运行的业务应用，也未修改现有项目。实际完成的检查见[验证记录](VALIDATION.md)。
+本包提供文档、12个Skills和评估工具；尚未包含可运行的业务应用，也未修改现有项目。实际完成的检查见[验证记录](VALIDATION.md)。
 
 ### Bug清单修复
 

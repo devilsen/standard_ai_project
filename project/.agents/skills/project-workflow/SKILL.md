@@ -19,6 +19,7 @@ description: 在采用独立设计交接流程的项目中启动或继续需求�
 | 目标/case/交互不明确，或接收产品设计 | [prepare-design](../prepare-design/SKILL.md) |
 | 界面行为明确，需要接口和内部边界 | [define-api](../define-api/SKILL.md) |
 | 契约足够，准备拆解/实现 | [plan-and-implement](../plan-and-implement/SKILL.md) |
+| 需要检查实现与设计的UI一致性，或反馈界面未对齐 | [verify-ui](../verify-ui/SKILL.md)，在第5步内执行 |
 | 需要在测试环境验证修复并请用户验收 | [verify-delivery](../verify-delivery/SKILL.md) |
 | 用户已确认本轮测试版本，准备发布staging | [release-staging](../release-staging/SKILL.md) |
 | 已实际上线，需要更新设计底稿 | [refresh-design](../refresh-design/SKILL.md) |
@@ -43,6 +44,6 @@ description: 在采用独立设计交接流程的项目中启动或继续需求�
 
 ## 完成
 
-上线交付按顺序执行verify-delivery（测试环境修复验证→飞书请用户验收→等待明确确认）→release-staging（发布已验收版本并验证）→refresh-design（同步底稿并验证）→补齐交付记录→notify-project（最后分别通知用户和默认群）。不能将测试通过、群通知或旧的测试机部署授权当成本轮用户确认。
+上线交付按顺序执行verify-delivery（测试环境修复验证，涉及界面时执行verify-ui→飞书请用户验收→等待明确确认）→release-staging（发布已验收版本并验证）→refresh-design（同步底稿并验证）→补齐交付记录→notify-project（最后分别通知用户和默认群）。不能将测试通过、群通知或旧的测试机部署授权当成本轮用户确认。
 
 交付用户实际请求的范围；逐项区分完成、未通过、未执行。只在实际发布并完成对应工作后记录上线与底稿同步，不能用源码测试替代。更新任务记录以供下一会话恢复。通知失败只影响通知状态，不伪装成业务未实现或发送成功；恢复时只续办待完成通知，不重跑发布。需求疑问/阻塞等过程消息仍及时发送；用户只要求PR时不擅自上线或发送上线完成通知。
