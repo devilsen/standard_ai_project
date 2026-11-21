@@ -47,7 +47,7 @@ python3 .agents/skills/buglist-fix/scripts/bug_funnel.py --root docs/spec/jobs -
 
 --as-of可过滤事件到某时刻，但归因/标题/链接是当前值；该工具不是完整历史快照回放。CSV可导入多维表格，含内部引用应留在授权空间；远程用户不能访问本地路径时填“本地记录不可远程访问”，或提供经授权可访问的PR/仓库链接，不把本地主机路径伪装成在线文档。
 
-当前接入目标见[漏斗绑定](../../../../docs/workflow/bug-funnel.json)。URL中的wiki token不是Base app_token；须用正式wiki解析取得obj_type/obj_token，再读取全部table/view/field元数据，按稳定field_id映射，校验类型和只读字段。用户给的view_id只确认所选视图，不能推断已有第二个Tab。
+接入时按[绑定示例](../../../../docs/workflow/bug-funnel.example.json)填写项目的 `docs/workflow/bug-funnel.json`。URL 中的 wiki token 需要通过正式 wiki 解析取得 obj_type 和 obj_token。随后读取全部 table、view 和 field 元数据，按稳定的 field_id 映射并校验类型及只读字段。用户给出的 view_id 对应其所选视图。
 
 接入步骤：核验董森/迪诺斯身份→解析Wiki节点→读真实Base/字段/视图/分页记录→写下字段映射与差异→按用户要求配置两个Tab且保留已有数据→按项目+Bug ID幂等更新工程投影→逐条回读核对→从同一明细生成统计。不要将数据表和仪表盘权限/能力混同；实际API不支持所需统计配置时交付CSV和明确的人工配置项，不称已完成在线统计。
 
