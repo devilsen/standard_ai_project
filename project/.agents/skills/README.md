@@ -19,4 +19,4 @@
 
 宿主支持项目Skills时使用 `$project-workflow`；否则显式读取对应文件。采用方式见[接入说明](../../docs/workflow/adoption.md)，效果验证见[评估入口](../../workflow-evaluation/README.md)。
 
-清单修复的输入、执行步骤、验收与结果查看方式见[使用流程](../../../README.md#bug清单修复)；执行细节由 buglist-fix 及其 references 维护。
+清单修复的输入、执行步骤、验收和结果查看方式见 [buglist-fix](buglist-fix/SKILL.md) 及其参考文档。
